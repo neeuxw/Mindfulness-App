@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    android:background="@drawable/mountain_background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal">
+
+        <!-- Profile Header - Redesigned with CardView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@android:color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="32dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_avatar"
+                    android:contentDescription="User Profile" />
+
+                <!-- Username Display -->
+                <TextView
+                    android:id="@+id/tv_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome, Username!"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#2d3436"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Check-in Days Display -->
+                <TextView
+                    android:id="@+id/tv_checkin_days"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Check-in Days: 0"
+                    android:textSize="16sp"
+                    android:textColor="#636e72" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Check-in Section - Redesigned -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@android:color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Daily Check-in"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#2d3436"
+                    android:layout_marginBottom="16dp"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Keep your streak alive! Check in daily to track your progress."
+                    android:textSize="14sp"
+                    android:textColor="#636e72"
+                    android:layout_marginBottom="24dp"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_horizontal" />
+
+                <!-- Check-in Button with ripple effect -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_checkin"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Check In"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@color/gray_blue"
+                    android:layout_marginBottom="8dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    app:rippleColor="#74b9ff" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Logout Button - Redesigned -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Logout"
+            android:textSize="16sp"
+            android:textColor="#e84118"
+            android:backgroundTint="#f8f9fa"
+            android:layout_marginTop="8dp"
+            app:strokeColor="#e84118"
+            app:strokeWidth="1dp"
+            app:rippleColor="#ff7675" />
+
+    </LinearLayout>
+</ScrollView>

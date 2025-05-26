@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.myapplication.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_practice"
+        android:name="com.example.myapplication.ui.practice.PracticeFragment"
+        android:label="@string/title_practice"
+        tools:layout="@layout/fragment_practice">
+
+        <action
+            android:id="@+id/action_to_practiceDetail"
+            app:destination="@id/practiceDetailFragment" />
+        </fragment>
+
+    <fragment
+        android:id="@+id/navigation_discover"
+        android:name="com.example.myapplication.ui.discover.DiscoverFragment"
+        android:label="@string/title_discover"
+        tools:layout="@layout/fragment_discover">
+
+        <action
+            android:id="@+id/action_to_article"
+            app:destination="@id/articleFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.myapplication.ui.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.example.myapplication.ArticleFragment"
+        android:label="Article"
+        tools:layout="@layout/fragment_article">
+
+        <argument
+            android:name="articleTitle"
+            app:argType="string" />
+        <argument
+            android:name="articleImageRes"
+            app:argType="integer" />
+        <argument
+            android:name="articleContent"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/practiceDetailFragment"
+        android:name="com.example.myapplication.PracticeDetailFragment"
+        android:label="@string/title_practice"
+        tools:layout="@layout/fragment_practice_detail">
+        <argument
+            android:name="practiceTitle"
+            app:argType="string" />
+        <argument
+            android:name="practiceDescription"
+            app:argType="string" />
+        <argument
+            android:name="backgroundResId"
+            app:argType="integer" />
+        <argument
+            android:name="practiceGuide"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_game"
+        android:name="com.example.myapplication.GameFragment"
+        android:label="@string/title_game"
+        tools:layout="@layout/fragment_game" >
+
+        <action
+            android:id="@+id/action_gameFragment_to_cloudGameFragment"
+            app:destination="@id/cloudGameFragment" />
+
+        <action
+            android:id="@+id/action_gameFragment_to_focusTapFragment"
+            app:destination="@id/focusTapFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/cloudGameFragment"
+        android:name="com.example.myapplication.CloudGameFragment"
+        android:label="Cloud Game"
+        tools:layout="@layout/fragment_cloud_game" />
+
+    <fragment
+        android:id="@+id/focusTapFragment"
+        android:name="com.example.myapplication.FocusTapFragment"
+        android:label="Focus Tap"
+        tools:layout="@layout/fragment_focus_tap" />
+
+</navigation>

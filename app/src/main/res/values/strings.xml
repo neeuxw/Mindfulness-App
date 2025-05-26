@@ -1,0 +1,114 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title_home">Home</string>
+    <string name="title_practice">Practice</string>
+    <string name="title_discover">Discover</string>
+    <string name="title_profile">Profile</string>
+    <string name="back">Back</string>
+    <string name="practice_detail">Practice Detail</string>
+    <string name="article1_content">
+    <b>Beginner\'s Guide to Mindfulness Meditation</b>\n\n
+    Mindfulness meditation is a practice of focusing attention on the present moment…\n\n
+    <b>Basic Steps:</b>\n
+    1. Find a quiet and comfortable place\n
+    2. Set a timer for 5-10 minutes\n
+    3. Focus on the sensation of breathing\n
+    4. When your mind wanders, gently bring it back to your breath\n\n
+    With daily practice, you\'ll gradually experience inner peace.
+</string>
+
+    <string name="article2_content">
+    <b>5 Mindfulness Techniques for Stress Relief</b>\n\n
+    1. <b>Breath Anchoring</b>: Focus on breathing for 3-5 minutes\n
+    2. <b>Body Scan</b>: Relax progressively from toes to head\n
+    3. <b>Mindful Walking</b>: Notice sensations with each step\n
+    4. <b>RAIN Technique</b>: Recognize, Allow, Investigate, Non-identification\n
+    5. <b>Gratitude Practice</b>: Record 3 things you\'re grateful for daily\n\n
+    These simple techniques are perfect for daily use.
+</string>
+
+    <string name="article3_content">
+    <b>Mindfulness Methods for Better Sleep</b>\n\n
+    Insomnia often stems from racing thoughts…\n\n
+    <b>Bedtime Practices:</b>\n
+    • Progressive muscle relaxation\n
+    • 4-7-8 breathing technique\n
+    • Visualizing peaceful scenes\n\n
+    Research shows mindfulness practice can significantly improve sleep quality.
+</string>
+
+    <string name="article4_content">
+    <b>4 Steps for Emotional Regulation</b>\n\n
+    1. <b>Awareness</b>: Notice the emotion arising\n
+    2. <b>Labeling</b>: "This is anger/anxiety/sadness"\n
+    3. <b>Acceptance</b>: Allow the emotion without judgment\n
+    4. <b>Response</b>: Choose conscious response over impulse\n\n
+    Practicing these steps helps manage intense emotions more effectively.
+</string>
+
+    <string name="article5_content">
+    <b>Daily Mindfulness Practices</b>\n\n
+    Incorporate mindfulness into daily activities:\n
+    • <b>Mindful Eating</b>: Notice food\'s colors, aromas and flavors\n
+    • <b>Mindful Washing</b>: Feel the water and movements\n
+    • <b>Mindful Commuting</b>: Observe your surroundings\n
+    • <b>Mindful Listening</b>: Listen with full attention\n\n
+    These mini-practices take just minutes daily but yield significant benefits.
+</string>
+
+    <string name="app_logo">app logo\n\n</string>
+    <string name="sign_in">Sign In</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="no_account">Don\'t have an account? Sign up</string>
+    <string name="register">Register</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="have_account">Already have an account? Sign in</string>
+    <string name="greeting_word">Greetings!</string>
+    <string name="welcome_word">Welcome back!</string>
+    <string name="mood_index">Please select your mood index</string>
+    <string name="mood_question">How\'re you feeling today?</string>
+    <string name="quote_of_the_day">Quote of the day</string>
+    <string name="change_quote">Change</string>
+    <string name="quick_start">Quick Start</string>
+    <string name="article_image_1">Article Image 1</string>
+    <string name="article_image_2">Article Image 2</string>
+    <string name="article_image_3">Article Image 3</string>
+    <string name="article_image_4">Article Image 4</string>
+    <string name="article_image_5">Article Image 5</string>
+    <string name="article1_title">The Beginner\'s Guide</string>
+    <string name="article2_title">5 Techniques to Reduce Stress</string>
+    <string name="article3_title">Mindfulness for Sleep</string>
+    <string name="article4_title">Mindfulness for Managing Moods</string>
+    <string name="article5_title">Integrate Mindfulness into Daily Life</string>
+    <string name="article1_subtitle">The basic concepts of mindfulness meditation</string>
+    <string name="article2_subtitle">Handling daily stress with mindfulness</string>
+    <string name="article3_subtitle">Bedtime meditation exercises help to fall asleep</string>
+    <string name="article4_subtitle">Learn not to be controlled by emotions</string>
+    <string name="article5_subtitle">Simple tips to make mindfulness a daily habit</string>
+    <string name="read_more">Read more</string>
+    <string name="logout">Logout</string>
+    <string name="practice_guide">Practice Guide</string>
+    <string name="breathing_exercise">Breathing Exercise</string>
+    <string name="breathing_exercise_desc">Calm your mind with focused breathing</string>
+    <string name="btn_start">Start</string>
+    <string name="mindfulness_meditation">Mindfulness Meditation</string>
+    <string name="mindfulness_meditation_desc">Develop present-moment awareness</string>
+    <string name="full_body_scan">Full Body Scan</string>
+    <string name="full_body_scan_desc">Release tension through body awareness</string>
+    <string name="btn_reset">Reset</string>
+    <string name="default_time">00:00</string>
+    <string name="time_unit">min(s)</string>
+    <string name="set_timer">Set timer:</string>
+    <string name="title_self_assessment">Self Assessment</string>
+    <string name="title_game">Game</string>
+    <string name="cloud_game">Let Go</string>
+    <string name="cloud_game_worry">Type your worry here...</string>
+    <string name="cloud_game_go">Let it go</string>
+    <string name="cloud_game_message">It has floated away, you can return to the present moment.</string>
+    <string name="enter_your_worry">Enter your worry...</string>
+    <string name="release">Release</string>
+    <string name="release_message">It has drifted away. You may return to the present moment.</string>
+    <string name="focus_tap">Focus Tap</string>
+    <string name="game_selection">Select a Game\n</string>
+</resources>

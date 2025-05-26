@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="@drawable/mountain_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:padding="16dp">
+
+        <!-- Article 1 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#B3FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/article1_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/discover_image1"
+                    android:contentDescription="@string/article_image_1"
+                    android:background="#E3F2FD"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/article1_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/article1_title"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/gray_blue"
+                        android:lineSpacingExtra="4dp"/>
+
+                    <TextView
+                        android:id="@+id/article1_summary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/article1_subtitle"
+                        android:textSize="15sp"
+                        android:textColor="@color/gray_blue"
+                        android:lineSpacingExtra="4dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/article1_button"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/read_more"
+                        android:textColor="#4A90E2"
+                        android:textSize="14sp"
+                        android:textAllCaps="false"
+                        app:icon="@drawable/ic_arrow_right"
+                        app:iconTint="#4A90E2"
+                        app:iconSize="18dp"
+                        app:iconPadding="4dp"
+                        app:iconGravity="textEnd"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Article 2 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#B3FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/article2_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/discover_image2"
+                    android:contentDescription="@string/article_image_2"
+                    android:background="#E8F5E9"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/article2_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/article2_title"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/gray_blue"
+                        android:lineSpacingExtra="4dp"/>
+
+                    <TextView
+                        android:id="@+id/article2_summary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/article2_subtitle"
+                        android:textSize="15sp"
+                        android:textColor="#666666"
+                        android:lineSpacingExtra="4dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/article2_button"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/read_more"
+                        android:textColor="#4A90E2"
+                        android:textSize="14sp"
+                        android:textAllCaps="false"
+                        app:icon="@drawable/ic_arrow_right"
+                        app:iconTint="#4A90E2"
+                        app:iconSize="18dp"
+                        app:iconPadding="4dp"
+                        app:iconGravity="textEnd"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Article 3 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#B3FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/article3_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/discover_image3"
+                    android:contentDescription="@string/article_image_3"
+                    android:background="#F3E5F5"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/article3_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/article3_title"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/gray_blue"
+                        android:lineSpacingExtra="4dp"/>
+
+                    <TextView
+                        android:id="@+id/article3_summary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/article3_subtitle"
+                        android:textSize="15sp"
+                        android:textColor="@color/gray_blue"
+                        android:lineSpacingExtra="4dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/article3_button"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/read_more"
+                        android:textColor="#4A90E2"
+                        android:textSize="14sp"
+                        android:textAllCaps="false"
+                        app:icon="@drawable/ic_arrow_right"
+                        app:iconTint="#4A90E2"
+                        app:iconSize="18dp"
+                        app:iconPadding="4dp"
+                        app:iconGravity="textEnd"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Article 4 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#B3FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/article4_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/discover_image4"
+                    android:contentDescription="@string/article_image_4"
+                    android:background="#FFF3E0"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/article4_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/article4_title"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/gray_blue"
+                        android:lineSpacingExtra="4dp"/>
+
+                    <TextView
+                        android:id="@+id/article4_summary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/article4_subtitle"
+                        android:textSize="15sp"
+                        android:textColor="@color/gray_blue"
+                        android:lineSpacingExtra="4dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/article4_button"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/read_more"
+                        android:textColor="#4A90E2"
+                        android:textSize="14sp"
+                        android:textAllCaps="false"
+                        app:icon="@drawable/ic_arrow_right"
+                        app:iconTint="#4A90E2"
+                        app:iconSize="18dp"
+                        app:iconPadding="4dp"
+                        app:iconGravity="textEnd"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Article 5 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#B3FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/article5_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/discover_image5"
+                    android:contentDescription="@string/article_image_5"
+                    android:background="#E0F7FA"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/article5_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/article5_title"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/gray_blue"
+                        android:lineSpacingExtra="4dp"/>
+
+                    <TextView
+                        android:id="@+id/article5_summary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/article5_subtitle"
+                        android:textSize="15sp"
+                        android:textColor="@color/gray_blue"
+                        android:lineSpacingExtra="4dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/article5_button"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/read_more"
+                        android:textColor="#4A90E2"
+                        android:textSize="14sp"
+                        android:textAllCaps="false"
+                        app:icon="@drawable/ic_arrow_right"
+                        app:iconTint="#4A90E2"
+                        app:iconSize="18dp"
+                        app:iconPadding="4dp"
+                        app:iconGravity="textEnd"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>
