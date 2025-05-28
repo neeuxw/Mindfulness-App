@@ -19,6 +19,8 @@ public class GameFragment extends Fragment {
 
         CardView focusTapCard = view.findViewById(R.id.card_focus_tap);
         CardView cloudGameCard = view.findViewById(R.id.card_cloud_game);
+        CardView colorMindfulnessCard = view.findViewById(R.id.card_color_mindfulness);
+        CardView zenDoodleCard = view.findViewById(R.id.card_zen_doodle);
 
         focusTapCard.setOnClickListener(v -> {
             Navigation.findNavController(v).navigate(R.id.action_gameFragment_to_focusTapFragment);
@@ -26,6 +28,14 @@ public class GameFragment extends Fragment {
 
         cloudGameCard.setOnClickListener(v -> {
             Navigation.findNavController(v).navigate(R.id.action_gameFragment_to_cloudGameFragment);
+        });
+
+        colorMindfulnessCard.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(R.id.action_gameFragment_to_colorMindfulnessFragment);
+        });
+
+        zenDoodleCard.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(R.id.action_gameFragment_to_zenDoodleFragment);
         });
 
         return view;

@@ -1,5 +1,6 @@
 package com.example.myapplication.ui.home;
 
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,6 +16,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+import androidx.lifecycle.ViewModelProvider;
+import com.example.myapplication.UserViewModel;
 
 import com.example.myapplication.DatabaseHelper;
 import com.example.myapplication.R;
@@ -23,16 +28,20 @@ import java.util.Random;
 
 public class HomeFragment extends Fragment {
 
+    private UserViewModel userViewModel;
     private TextView quoteText;
-    private Button refreshQuoteBtn;
+    private ImageButton refreshQuoteBtn;
+
     private Button quickStartBtn;
     private TextView greetingText;
-    private TextView usernameText; // 新增用户名TextView
+    private TextView usernameText;
     private TextView moodSuggestionText;
     private ImageView[] moodIcons = new ImageView[5];
-    private DatabaseHelper dbHelper; // 数据库帮助类
+    private DatabaseHelper dbHelper;
 
-    // 名言数组
+    // Store current username for mood saving
+    private String currentUsername;
+
     private final String[] quotes = {
             "Mindfulness is a way of befriending ourselves and our experience.",
             "Inhale the future, exhale the past.",
@@ -42,7 +51,6 @@ public class HomeFragment extends Fragment {
             "Be where your feet are."
     };
 
-    // 心情建议数组
     private final String[] moodSuggestions = {
             "You seem to be feeling down. Try deep breathing to ease your emotions.",
             "You seem a bit low. A 10-minute loving-kindness meditation might help.",
@@ -54,7 +62,6 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // 初始化数据库帮助类
         dbHelper = new DatabaseHelper(getActivity());
     }
 
@@ -63,66 +70,97 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        // 初始化视图
+        userViewModel = new ViewModelProvider(requireActivity()).get(UserViewModel.class);
+
         quoteText = view.findViewById(R.id.quote_text);
         refreshQuoteBtn = view.findViewById(R.id.refresh_quote_btn);
         quickStartBtn = view.findViewById(R.id.quick_start_btn1);
         greetingText = view.findViewById(R.id.greeting_text);
-        usernameText = view.findViewById(R.id.username_text); // 初始化用户名TextView
+        usernameText = view.findViewById(R.id.username_text);
         moodSuggestionText = view.findViewById(R.id.mood_suggestion_text);
 
-        // 初始化心情图标
         moodIcons[0] = view.findViewById(R.id.mood_1);
         moodIcons[1] = view.findViewById(R.id.mood_2);
         moodIcons[2] = view.findViewById(R.id.mood_3);
         moodIcons[3] = view.findViewById(R.id.mood_4);
         moodIcons[4] = view.findViewById(R.id.mood_5);
 
-        // 设置初始名言
         showRandomQuote();
 
-        // 设置问候语和用户名
         updateGreeting();
-        loadUsername(); // 加载用户名
+        loadUsername();
 
-        // 设置心情图标点击事件
         setupMoodIcons();
 
-        // 刷新名言按钮点击事件
         refreshQuoteBtn.setOnClickListener(v -> showRandomQuote());
 
-        // 快速开始按钮点击事件
         quickStartBtn.setOnClickListener(v -> {
-            Toast.makeText(getContext(), "Start breathing exercise", Toast.LENGTH_SHORT).show();
+            Navigation.findNavController(v).navigate(R.id.action_to_cloudGameFragment);
         });
 
         return view;
     }
 
-    // 从数据库加载用户名
+    private void loadUsername() {
+        SharedPreferences prefs = requireActivity().getSharedPreferences("user_prefs", getContext().MODE_PRIVATE);
+        String username = prefs.getString("logged_in_username", null);
+
+        if (username != null && !username.isEmpty()) {
+            usernameText.setText(username);
+            currentUsername = username; // Store username for mood saving
+            userViewModel.setUsername(username);  // ViewModel update
+            loadTodaysMood(); // Load today's mood if exists
+        } else {
+            usernameText.setText("User");
+            currentUsername = "User"; // Default username
+            userViewModel.setUsername("User"); // ViewModel update
+        }
+    }
+
+
+    /*
     private void loadUsername() {
         new Thread(() -> {
             String username = getUsernameFromDatabase();
 
-            // 回到主线程更新UI
             if (getActivity() != null) {
                 getActivity().runOnUiThread(() -> {
                     if (username != null && !username.isEmpty()) {
                         usernameText.setText(username);
+                        currentUsername = username; // Store username for mood saving
+                        userViewModel.setUsername(username);  // ViewModel update
+                        loadTodaysMood(); // Load today's mood if exists
                     } else {
-                        usernameText.setText("User"); // 默认值
+                        usernameText.setText("User");
+                        currentUsername = "User"; // Default username
+                        userViewModel.setUsername("User"); // ViewModel update
                     }
                 });
             }
         }).start();
     }
+     */
 
-    // 从数据库获取用户名
+    // Load today's mood from database
+    private void loadTodaysMood() {
+        new Thread(() -> {
+            int todaysMood = dbHelper.getMoodForToday(currentUsername);
+
+            if (getActivity() != null && todaysMood != -1) {
+                getActivity().runOnUiThread(() -> {
+                    updateMoodSelection(todaysMood);
+                    showMoodSuggestion(todaysMood);
+                    userViewModel.setMoodLevel(todaysMood);  // ViewModel update
+                });
+            }
+        }).start();
+    }
+
+    /*
     private String getUsernameFromDatabase() {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         String username = null;
 
-        // 查询用户名（假设用户表中有username字段）
         Cursor cursor = db.query(
                 "users",
                 new String[]{"username"},
@@ -137,15 +175,14 @@ public class HomeFragment extends Fragment {
 
         return username;
     }
+     */
 
-    // 显示随机名言
     private void showRandomQuote() {
         Random random = new Random();
         int index = random.nextInt(quotes.length);
         quoteText.setText(quotes[index]);
     }
 
-    // 根据时间更新问候语
     private void updateGreeting() {
         Calendar calendar = Calendar.getInstance();
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
@@ -162,29 +199,46 @@ public class HomeFragment extends Fragment {
         greetingText.setText(greeting);
     }
 
-    // 设置心情图标点击事件
     private void setupMoodIcons() {
         for (int i = 0; i < moodIcons.length; i++) {
             final int moodLevel = i + 1;
             moodIcons[i].setOnClickListener(v -> {
                 updateMoodSelection(moodLevel);
                 showMoodSuggestion(moodLevel);
+                saveMoodToDatabase(moodLevel); // Save mood to database
             });
         }
     }
 
-    // 更新心情选择状态
+    // Save mood to database
+    private void saveMoodToDatabase(int moodLevel) {
+        if (currentUsername != null) {
+            new Thread(() -> {
+                boolean success = dbHelper.saveMood(currentUsername, moodLevel);
+
+                if (getActivity() != null) {
+                    getActivity().runOnUiThread(() -> {
+                        if (success) {
+                            Toast.makeText(getContext(), "Mood saved successfully!", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getContext(), "Failed to save mood", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            }).start();
+        }
+    }
+
     private void updateMoodSelection(int selectedMood) {
         for (int i = 0; i < moodIcons.length; i++) {
             if (i < selectedMood) {
-                moodIcons[i].setAlpha(1.0f); // 选中状态
+                moodIcons[i].setAlpha(1.0f);
             } else {
-                moodIcons[i].setAlpha(0.3f); // 未选中状态
+                moodIcons[i].setAlpha(0.3f);
             }
         }
     }
 
-    // 显示心情建议
     private void showMoodSuggestion(int moodLevel) {
         if (moodLevel >= 1 && moodLevel <= 5) {
             moodSuggestionText.setText(moodSuggestions[moodLevel - 1]);
@@ -193,7 +247,7 @@ public class HomeFragment extends Fragment {
 
     @Override
     public void onDestroy() {
-        dbHelper.close(); // 关闭数据库连接
+        dbHelper.close();
         super.onDestroy();
     }
 }

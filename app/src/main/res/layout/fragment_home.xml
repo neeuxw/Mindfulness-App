@@ -10,15 +10,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
 
         <!-- User Greeting Card -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="20dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="0dp"
             app:cardBackgroundColor="@android:color/transparent">
@@ -58,7 +57,7 @@
             android:layout_marginBottom="16dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="0dp"
-            app:cardBackgroundColor="#80FFFFFF">
+            app:cardBackgroundColor="#B3FFFFFF">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -157,7 +156,7 @@
             android:layout_marginBottom="16dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="0dp"
-            app:cardBackgroundColor="#80FFFFFF">
+            app:cardBackgroundColor="#B3FFFFFF">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -184,18 +183,18 @@
                     android:textColor="@color/gray_blue"
                     android:textSize="16sp" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/refresh_quote_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:alpha="0.8"
                     android:layout_gravity="end"
-                    android:backgroundTint="@color/gray_blue"
-                    android:paddingStart="24dp"
-                    android:paddingEnd="24dp"
-                    android:text="@string/change_quote"
-                    android:textAllCaps="false"
-                    android:textColor="@android:color/white"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_cycle"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/change_quote">
+                </ImageButton>
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -205,7 +204,7 @@
             android:layout_height="wrap_content"
             app:cardCornerRadius="16dp"
             app:cardElevation="0dp"
-            app:cardBackgroundColor="#80FFFFFF">
+            app:cardBackgroundColor="#B3FFFFFF">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -216,25 +215,24 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/quick_start"
+                    android:text="@string/let_go_worries"
                     android:textColor="#333333"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/quick_start_btn1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_marginTop="16dp"
-                    android:backgroundTint="@color/gray_blue"
-                    android:elevation="0dp"
-                    android:padding="16dp"
-                    android:text="Start Breathing Exercise"
+                    android:text="@string/go_to_cloud_game"
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
                     android:textSize="16sp"
+                    android:backgroundTint="@color/gray_blue"
+                    android:elevation="4dp"
+                    app:cornerRadius="24dp"
                     style="@style/Widget.MaterialComponents.Button" />
-
             </LinearLayout>
 
 

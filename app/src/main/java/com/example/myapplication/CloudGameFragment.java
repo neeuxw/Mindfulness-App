@@ -53,26 +53,22 @@ public class CloudGameFragment extends Fragment {
             return;
         }
 
-        // 隐藏正念消息（如果之前显示过）
         mindfulnessMessage.setVisibility(View.INVISIBLE);
 
-        // 创建一个FrameLayout作为容器
         FrameLayout cloudWithText = new FrameLayout(requireContext());
 
-        // 创建云朵视图
         ImageView cloud = new ImageView(requireContext());
         cloud.setImageResource(R.drawable.cloud_icon);
 
-        // 创建显示烦恼文字的TextView
         TextView worryText = new TextView(requireContext());
         worryText.setText(worry);
         worryText.setTextColor(getResources().getColor(android.R.color.black, requireContext().getTheme()));
-        worryText.setTextSize(16);
+        worryText.setTextSize(30);
         worryText.setGravity(android.view.Gravity.CENTER);
 
-        // 设置容器、云朵和文字的布局参数
+        // Set container, cloud, and text layout parameters
         RelativeLayout.LayoutParams containerParams = new RelativeLayout.LayoutParams(
-                150, 150);
+                300, 300);
         containerParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
         containerParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
         containerParams.bottomMargin = 50;
@@ -86,7 +82,7 @@ public class CloudGameFragment extends Fragment {
                 FrameLayout.LayoutParams.WRAP_CONTENT);
         textParams.gravity = android.view.Gravity.CENTER;
 
-        // 添加视图到层级结构中
+        // Apply layout parameters to the views
         cloud.setLayoutParams(cloudParams);
         worryText.setLayoutParams(textParams);
 
@@ -95,22 +91,22 @@ public class CloudGameFragment extends Fragment {
 
         cloudContainer.addView(cloudWithText, containerParams);
 
-        // 创建动画 - 云朵向上移动
+        // Create animation - cloud moves up
         ObjectAnimator moveAnimator = ObjectAnimator.ofFloat(
                 cloudWithText, "translationY", -1000f);
         moveAnimator.setDuration(3000);
         moveAnimator.setInterpolator(new AccelerateInterpolator());
 
-        // 创建动画 - 云朵淡出
+        // Create animation - text fades out
         AlphaAnimation fadeOut = new AlphaAnimation(1.0f, 0.0f);
         fadeOut.setDuration(3000);
         fadeOut.setFillAfter(true);
 
-        // 开始动画
+        // Start animations
         cloudWithText.startAnimation(fadeOut);
         moveAnimator.start();
 
-        // 动画结束后显示正念消息并移除云朵
+        // After 3 seconds, remove the cloud and show the message
         cloudWithText.postDelayed(() -> {
             mindfulnessMessage.setVisibility(View.VISIBLE);
             cloudContainer.removeView(cloudWithText);

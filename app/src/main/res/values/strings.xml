@@ -8,53 +8,33 @@
     <string name="practice_detail">Practice Detail</string>
     <string name="article1_content">
     <b>Beginner\'s Guide to Mindfulness Meditation</b>\n\n
-    Mindfulness meditation is a practice of focusing attention on the present moment…\n\n
-    <b>Basic Steps:</b>\n
-    1. Find a quiet and comfortable place\n
-    2. Set a timer for 5-10 minutes\n
-    3. Focus on the sensation of breathing\n
-    4. When your mind wanders, gently bring it back to your breath\n\n
-    With daily practice, you\'ll gradually experience inner peace.
-</string>
+    Mindfulness meditation is a simple but powerful technique aimed at cultivating awareness of the present moment. For beginners, it serves as an accessible entry point into the broader world of mindfulness practices. By intentionally focusing attention on what is happening here and now—especially the breath—individuals can develop a heightened sense of clarity and calm.\n\n
+    To begin, find a quiet, comfortable space where you can sit without distraction. Set a timer for 5 to 10 minutes, allowing you to meditate without the worry of watching the clock. Focus your attention on your breath—how it flows in and out. When your mind inevitably wanders, gently return your focus to the breath without judgment. With consistent daily practice, this simple routine can become a foundation for cultivating inner peace and emotional balance.
+    </string>
 
     <string name="article2_content">
     <b>5 Mindfulness Techniques for Stress Relief</b>\n\n
-    1. <b>Breath Anchoring</b>: Focus on breathing for 3-5 minutes\n
-    2. <b>Body Scan</b>: Relax progressively from toes to head\n
-    3. <b>Mindful Walking</b>: Notice sensations with each step\n
-    4. <b>RAIN Technique</b>: Recognize, Allow, Investigate, Non-identification\n
-    5. <b>Gratitude Practice</b>: Record 3 things you\'re grateful for daily\n\n
-    These simple techniques are perfect for daily use.
-</string>
+    Stress is an inevitable part of life, but mindfulness techniques offer practical ways to manage and reduce its impact. One effective method is <b>Breath Anchoring</b>, which involves focusing on your breathing for a few minutes to calm the mind. Another is the <b>Body Scan</b>, where you slowly bring awareness to different parts of the body, starting from the toes and moving upwards, allowing tension to melt away.\n\n
+    <b>Mindful Walking</b> encourages awareness of the sensations in your feet and legs with each step, transforming a mundane activity into a grounding experience. The <b>RAIN Technique</b>—Recognize, Allow, Investigate, and Non-identification—helps process difficult emotions with compassion and clarity. Finally, practicing <b>Gratitude</b> by noting three things you’re thankful for each day can shift your mindset toward positivity. Together, these five practices serve as powerful tools for stress relief and emotional resilience.
+    </string>
 
     <string name="article3_content">
     <b>Mindfulness Methods for Better Sleep</b>\n\n
-    Insomnia often stems from racing thoughts…\n\n
-    <b>Bedtime Practices:</b>\n
-    • Progressive muscle relaxation\n
-    • 4-7-8 breathing technique\n
-    • Visualizing peaceful scenes\n\n
-    Research shows mindfulness practice can significantly improve sleep quality.
-</string>
+    Sleep problems, especially insomnia, often arise from a restless mind full of racing thoughts. Mindfulness can be a valuable ally in calming the mind and preparing the body for restful sleep. Several bedtime practices rooted in mindfulness have been shown to significantly improve sleep quality.\n\n
+    <b>Progressive muscle relaxation</b> helps release physical tension by focusing on tensing and relaxing muscle groups in a sequence. The <b>4-7-8 breathing technique</b>—inhaling for four seconds, holding for seven, and exhaling for eight—slows down the nervous system. Visualizing peaceful, calming scenes can also guide the mind away from stress and into tranquility. Integrating these techniques into a nightly routine can pave the way for deeper, more restorative sleep.
+    </string>
 
     <string name="article4_content">
     <b>4 Steps for Emotional Regulation</b>\n\n
-    1. <b>Awareness</b>: Notice the emotion arising\n
-    2. <b>Labeling</b>: "This is anger/anxiety/sadness"\n
-    3. <b>Acceptance</b>: Allow the emotion without judgment\n
-    4. <b>Response</b>: Choose conscious response over impulse\n\n
-    Practicing these steps helps manage intense emotions more effectively.
-</string>
+    Managing emotions effectively is a vital life skill, and mindfulness offers a structured approach to doing just that. The process begins with <b>Awareness</b>, which means noticing the emotion as it arises without immediately reacting. The next step is <b>Labeling</b>, where you identify and name the emotion—such as anger, sadness, or anxiety.\n\n
+    Following this, <b>Acceptance</b> encourages you to allow the emotion to be present without judgment or resistance. Finally, <b>Response</b> empowers you to choose a conscious, thoughtful reaction instead of an impulsive one. By practicing these four steps regularly, individuals can develop greater emotional intelligence and respond to challenges in a more balanced and composed way.
+    </string>
 
     <string name="article5_content">
     <b>Daily Mindfulness Practices</b>\n\n
-    Incorporate mindfulness into daily activities:\n
-    • <b>Mindful Eating</b>: Notice food\'s colors, aromas and flavors\n
-    • <b>Mindful Washing</b>: Feel the water and movements\n
-    • <b>Mindful Commuting</b>: Observe your surroundings\n
-    • <b>Mindful Listening</b>: Listen with full attention\n\n
-    These mini-practices take just minutes daily but yield significant benefits.
-</string>
+    Mindfulness doesn\'t have to be limited to formal meditation sessions; it can be seamlessly integrated into everyday activities. <b>Mindful Eating</b>, for example, involves fully experiencing the colors, aromas, and textures of your food, turning mealtime into a rich sensory experience. <b>Mindful Washing</b> transforms routine cleaning into a soothing ritual by focusing on the sensation of water and movement.\n\n
+    <b>Mindful Commuting</b> is about observing your environment while traveling, whether you’re walking, driving, or on public transport. Lastly, <b>Mindful Listening</b> involves giving someone your full attention, which can deepen relationships and improve communication. These daily practices take only a few minutes but can enhance well-being and presence in meaningful ways.
+    </string>
 
     <string name="app_logo">app logo\n\n</string>
     <string name="sign_in">Sign In</string>
@@ -70,7 +50,6 @@
     <string name="mood_question">How\'re you feeling today?</string>
     <string name="quote_of_the_day">Quote of the day</string>
     <string name="change_quote">Change</string>
-    <string name="quick_start">Quick Start</string>
     <string name="article_image_1">Article Image 1</string>
     <string name="article_image_2">Article Image 2</string>
     <string name="article_image_3">Article Image 3</string>
@@ -111,4 +90,16 @@
     <string name="release_message">It has drifted away. You may return to the present moment.</string>
     <string name="focus_tap">Focus Tap</string>
     <string name="game_selection">Select a Game\n</string>
+    <string name="color_mindfulness">Color Mindfulness</string>
+    <string name="zen_doodle">Zen Doodle</string>
+    <string name="start_new_exercise">Start a New Exercise</string>
+    <string name="let_go_worries">Cloud Away Today\'s Worries</string>
+    <string name="go_to_cloud_game">Go to Cloud Game</string>
+    <string name="total_check_in_days">Total Check-in Days: 0</string>
+    <string name="mood_icon">Mood Icon</string>
+    <string name="current_mood">Current Mood: Great</string>
+    <string name="my_status">My Status</string>
+    <string name="daily_check_in">Daily Check-in</string>
+    <string name="check_in_message">Keep your streak alive!\nCheck in daily to track your progress.</string>
+    <string name="check_in">Check In</string>
 </resources>

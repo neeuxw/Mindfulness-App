@@ -3,25 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="0dp"
+    android:padding="16dp"
     android:background="@drawable/mountain_background"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:orientation="vertical"
-        android:padding="16dp"
         android:gravity="center_horizontal">
 
-        <!-- Profile Header - Redesigned with CardView -->
+        <!-- Profile Header-->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             app:cardCornerRadius="12dp"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="@android:color/white">
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@android:color/transparent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -30,21 +30,16 @@
                 android:padding="32dp"
                 android:gravity="center">
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_avatar"
-                    android:contentDescription="User Profile" />
-
                 <!-- Username Display -->
                 <TextView
                     android:id="@+id/tv_username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Welcome, Username!"
-                    android:textSize="22sp"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/username"
+                    android:textSize="35sp"
                     android:textStyle="bold"
-                    android:textColor="#2d3436"
+                    android:textColor="@color/gray_blue"
                     android:layout_marginBottom="8dp" />
 
                 <!-- Check-in Days Display -->
@@ -52,20 +47,79 @@
                     android:id="@+id/tv_checkin_days"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Total Check-in Days: 0"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/total_check_in_days"
                     android:textSize="16sp"
-                    android:textColor="#636e72" />
+                    android:textColor="@color/dark_gray_blue" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Check-in Section - Redesigned -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my_status"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/gray_blue"
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="start" />
+
+        <!-- Mood Card -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             app:cardCornerRadius="12dp"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="@android:color/white">
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#80FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="32dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_mood_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="30dp"
+                    android:src="@drawable/ic_mood5"
+                    android:contentDescription="@string/mood_icon" />
+
+                <TextView
+                    android:id="@+id/tv_mood_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/current_mood"
+                    android:textSize="18sp"
+                    android:textColor="@color/gray_blue"
+                    android:layout_marginStart="16dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Check-in Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/daily_check_in"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#2d3436"
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="start" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#80FFFFFF">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -76,19 +130,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Daily Check-in"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#2d3436"
-                    android:layout_marginBottom="16dp"
-                    android:layout_gravity="center_horizontal" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Keep your streak alive! Check in daily to track your progress."
-                    android:textSize="14sp"
-                    android:textColor="#636e72"
+                    android:text="@string/check_in_message"
+                    android:textSize="15sp"
+                    android:textColor="@color/gray_blue"
                     android:layout_marginBottom="24dp"
                     android:textAlignment="center"
                     android:layout_gravity="center_horizontal" />
@@ -98,7 +142,7 @@
                     android:id="@+id/btn_checkin"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
-                    android:text="Check In"
+                    android:text="@string/check_in"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
@@ -106,20 +150,25 @@
                     android:layout_marginBottom="8dp"
                     android:insetTop="0dp"
                     android:insetBottom="0dp"
+                    app:cornerRadius="24dp"
                     app:rippleColor="#74b9ff" />
+
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Logout Button - Redesigned -->
+        <!-- Logout Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_logout"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:text="Logout"
+            android:layout_height="50dp"
+            android:text="@string/logout"
             android:textSize="16sp"
+            android:textStyle="bold"
             android:textColor="#e84118"
             android:backgroundTint="#f8f9fa"
             android:layout_marginTop="8dp"
+            app:cornerRadius="24dp"
             app:strokeColor="#e84118"
             app:strokeWidth="1dp"
             app:rippleColor="#ff7675" />

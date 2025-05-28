@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
             boolean shouldHideBottomNav = (destinationId == R.id.practiceDetailFragment ||
                     destinationId == R.id.articleFragment ||
                     destinationId == R.id.cloudGameFragment ||
+                    destinationId == R.id.colorMindfulnessFragment ||
+                    destinationId == R.id.zenDoodleFragment ||
                     destinationId == R.id.focusTapFragment);
 
             if (shouldHideBottomNav) {

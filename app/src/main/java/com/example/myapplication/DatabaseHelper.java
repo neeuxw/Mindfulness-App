@@ -11,7 +11,7 @@ import java.util.Locale;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "UserDB";
-    private static final int DATABASE_VERSION = 4; // Updated version for new table
+    private static final int DATABASE_VERSION = 5; // Updated version for new table
 
     // Users table
     private static final String TABLE_USERS = "users";
@@ -25,6 +25,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String KEY_CHECKIN_USERNAME = "username";
     private static final String KEY_CHECKIN_DATE = "checkin_date";
 
+    // **NEW**: Mood table
+    private static final String TABLE_MOOD = "mood";
+    private static final String KEY_MOOD_ID = "mood_id";
+    private static final String KEY_MOOD_USERNAME = "mood_username";
+    private static final String KEY_MOOD_LEVEL = "mood_level";
+    private static final String KEY_MOOD_DATE = "mood_date";
+
     private static final String CREATE_TABLE_USERS = "CREATE TABLE " + TABLE_USERS + "("
             + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + KEY_USERNAME + " TEXT UNIQUE,"
@@ -36,6 +43,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + KEY_CHECKIN_DATE + " TEXT,"
             + "FOREIGN KEY(" + KEY_CHECKIN_USERNAME + ") REFERENCES " + TABLE_USERS + "(" + KEY_USERNAME + "))";
 
+    //Create mood table
+    private static final String CREATE_TABLE_MOOD = "CREATE TABLE " + TABLE_MOOD + "("
+            + KEY_MOOD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + KEY_MOOD_USERNAME + " TEXT,"
+            + KEY_MOOD_LEVEL + " INTEGER,"
+            + KEY_MOOD_DATE + " TEXT,"
+            + "FOREIGN KEY(" + KEY_MOOD_USERNAME + ") REFERENCES " + TABLE_USERS + "(" + KEY_USERNAME + "))";
+
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -44,6 +59,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_USERS);
         db.execSQL(CREATE_TABLE_CHECKIN);
+        db.execSQL(CREATE_TABLE_MOOD);
     }
 
     @Override
@@ -51,9 +67,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (oldVersion < 4) {
             db.execSQL(CREATE_TABLE_CHECKIN);
         }
+        // Add mood table for version 5
+        if (oldVersion < 5) {
+            db.execSQL(CREATE_TABLE_MOOD);
+        }
     }
 
-    // Existing user methods
+    // Add user methods
     public void addUser(String username, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -132,6 +152,63 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
 
         return count;
+    }
+
+    // Mood methods
+    public boolean saveMood(String username, int moodLevel) {
+        // Check if mood already exists for today
+        if (getMoodForToday(username) != -1) {
+            return updateMoodForToday(username, moodLevel);
+        }
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(KEY_MOOD_USERNAME, username);
+        values.put(KEY_MOOD_LEVEL, moodLevel);
+        values.put(KEY_MOOD_DATE, getCurrentDate());
+
+        long result = db.insert(TABLE_MOOD, null, values);
+        db.close();
+
+        return result != -1;
+    }
+
+    // Get mood for today
+    public int getMoodForToday(String username) {
+        String today = getCurrentDate();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] columns = {KEY_MOOD_LEVEL};
+        String selection = KEY_MOOD_USERNAME + " = ? AND " + KEY_MOOD_DATE + " = ?";
+        String[] selectionArgs = {username, today};
+
+        Cursor cursor = db.query(TABLE_MOOD, columns, selection, selectionArgs, null, null, null);
+        int moodLevel = -1;
+
+        if (cursor != null && cursor.moveToFirst()) {
+            moodLevel = cursor.getInt(0);
+            cursor.close();
+        }
+        db.close();
+
+        return moodLevel;
+    }
+
+    // Update mood for today
+    private boolean updateMoodForToday(String username, int moodLevel) {
+        String today = getCurrentDate();
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_MOOD_LEVEL, moodLevel);
+
+        String whereClause = KEY_MOOD_USERNAME + " = ? AND " + KEY_MOOD_DATE + " = ?";
+        String[] whereArgs = {username, today};
+
+        int rowsAffected = db.update(TABLE_MOOD, values, whereClause, whereArgs);
+        db.close();
+
+        return rowsAffected > 0;
     }
 
     private String getCurrentDate() {

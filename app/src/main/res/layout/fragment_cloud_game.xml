@@ -8,29 +8,43 @@
     <EditText
         android:id="@+id/worryEditText"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="50dp"
         android:hint="@string/enter_your_worry"
         android:inputType="text"
-        android:layout_marginBottom="16dp"/>
+        android:background="@drawable/rounded_white"
+        android:textColor="@color/gray_blue"
+        android:textSize="16sp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_marginBottom="24dp"/>
 
     <Button
         android:id="@+id/releaseButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
         android:layout_below="@id/worryEditText"
         android:layout_centerHorizontal="true"
         android:text="@string/release"
-        android:layout_marginBottom="16dp"/>
+        android:background="@drawable/rounded_white"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:layout_marginBottom="24dp"/>
 
     <TextView
         android:id="@+id/mindfulnessMessage"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:gravity="center"
         android:textSize="18sp"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/gray_blue"
+        android:textStyle="bold"
         android:visibility="invisible"
+        android:lineSpacingExtra="4dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
         android:text="@string/release_message"/>
 
     <RelativeLayout
