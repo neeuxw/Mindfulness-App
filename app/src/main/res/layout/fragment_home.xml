@@ -231,6 +231,10 @@
                     android:textSize="16sp"
                     android:backgroundTint="@color/gray_blue"
                     android:elevation="4dp"
+
+                    app:icon="@drawable/cloud"
+                    app:iconSize="24dp"
+                    app:iconGravity="textEnd"
                     app:cornerRadius="24dp"
                     style="@style/Widget.MaterialComponents.Button" />
             </LinearLayout>

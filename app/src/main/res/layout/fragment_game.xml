@@ -3,182 +3,213 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:gravity="center"
     android:padding="16dp"
-    android:background="@drawable/mountain_background">
+    android:background="@drawable/mountain_background"
+    android:scrollbars="horizontal">
 
-    <LinearLayout
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginBottom="16dp">
+        android:scrollbars="none">
 
-        <!-- Focus Tap Card Button -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_focus_tap"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_weight="1"
-            android:layout_margin="8dp"
-            android:foreground="?selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="6dp"
-            app:cardBackgroundColor="@color/white">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="16dp"
-                android:background="?attr/selectableItemBackgroundBorderless">
+            <!-- Focus Tap Card Button -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_focus_tap"
+                android:layout_width="300dp"
+                android:layout_height="400dp"
+                android:layout_margin="8dp"
+                android:foreground="?selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#B3FFFFFF">
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/tap"
-                    android:contentDescription="Focus Tap Icon" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="24dp"
+                    android:background="?attr/selectableItemBackgroundBorderless">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/focus_tap"
-                    android:textSize="20sp"
-                    android:textColor="@color/gray_blue"
-                    android:layout_marginTop="16dp"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/tap"
+                        android:contentDescription="Focus Tap Icon" />
 
-        <!-- Cloud Game Card Button -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_cloud_game"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_weight="1"
-            android:layout_margin="8dp"
-            android:foreground="?selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="6dp"
-            app:cardBackgroundColor="@color/white">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/focus_tap"
+                        android:textSize="24sp"
+                        android:textColor="@color/gray_blue"
+                        android:layout_marginTop="16dp"
+                        android:textStyle="bold"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="16dp"
-                android:background="?attr/selectableItemBackgroundBorderless">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Quickly tap the dots as they appear"
+                        android:textSize="16sp"
+                        android:textColor="@color/gray_blue"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:lineSpacingExtra="4dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/cloud"
-                    android:contentDescription="Cloud Game Icon" />
+            <!-- Cloud Game Card Button -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_cloud_game"
+                android:layout_width="300dp"
+                android:layout_height="400dp"
+                android:layout_margin="8dp"
+                android:foreground="?selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#B3FFFFFF">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cloud_game"
-                    android:textSize="20sp"
-                    android:textColor="@color/gray_blue"
-                    android:layout_marginTop="16dp"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="24dp"
+                    android:background="?attr/selectableItemBackgroundBorderless">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginBottom="16dp">
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/cloud"
+                        android:contentDescription="Cloud Game Icon" />
 
-        <!-- Color Mindfulness Button -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_color_mindfulness"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_weight="1"
-            android:layout_margin="8dp"
-            android:foreground="?selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="6dp"
-            app:cardBackgroundColor="@color/white">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cloud_game"
+                        android:textSize="24sp"
+                        android:textColor="@color/gray_blue"
+                        android:layout_marginTop="16dp"
+                        android:textStyle="bold"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="16dp"
-                android:background="?attr/selectableItemBackgroundBorderless">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Release your worries into the clouds"
+                        android:textSize="16sp"
+                        android:textColor="@color/gray_blue"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:lineSpacingExtra="4dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/color"
-                    android:contentDescription="Color Mindfulness Icon" />
+            <!-- Color Mindfulness Button -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_color_mindfulness"
+                android:layout_width="300dp"
+                android:layout_height="400dp"
+                android:layout_margin="8dp"
+                android:foreground="?selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#B3FFFFFF">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/color_mindfulness"
-                    android:gravity="center_horizontal"
-                    android:textSize="20sp"
-                    android:textColor="@color/gray_blue"
-                    android:layout_marginTop="16dp"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="24dp"
+                    android:background="?attr/selectableItemBackgroundBorderless">
 
-        <!-- Zen Doodle Card Button -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_zen_doodle"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_weight="1"
-            android:layout_margin="8dp"
-            android:foreground="?selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="6dp"
-            app:cardBackgroundColor="@color/white">
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/color"
+                        android:contentDescription="Color Mindfulness Icon" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="16dp"
-                android:background="?attr/selectableItemBackgroundBorderless">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/color_mindfulness"
+                        android:textSize="24sp"
+                        android:textColor="@color/gray_blue"
+                        android:layout_marginTop="16dp"
+                        android:textStyle="bold"/>
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/doodle"
-                    android:contentDescription="Zen Doodle Icon" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Identify colors to calm your mind"
+                        android:textSize="16sp"
+                        android:textColor="@color/gray_blue"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:lineSpacingExtra="4dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/zen_doodle"
-                    android:textSize="20sp"
-                    android:textColor="@color/gray_blue"
-                    android:layout_marginTop="16dp"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
+            <!-- Zen Doodle Card Button -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_zen_doodle"
+                android:layout_width="300dp"
+                android:layout_height="400dp"
+                android:layout_margin="8dp"
+                android:foreground="?selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#B3FFFFFF">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="24dp"
+                    android:background="?attr/selectableItemBackgroundBorderless">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/doodle"
+                        android:contentDescription="Zen Doodle Icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/zen_doodle"
+                        android:textSize="24sp"
+                        android:textColor="@color/gray_blue"
+                        android:layout_marginTop="16dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Draw continuous lines without lifting"
+                        android:textSize="16sp"
+                        android:textColor="@color/gray_blue"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:lineSpacingExtra="4dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </HorizontalScrollView>
 </LinearLayout>

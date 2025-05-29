@@ -102,4 +102,8 @@
     <string name="daily_check_in">Daily Check-in</string>
     <string name="check_in_message">Keep your streak alive!\nCheck in daily to track your progress.</string>
     <string name="check_in">Check In</string>
+    <string name="tap_button">Tap</string>
+    <string name="score">Score: 0</string>
+    <string name="next_color">Next Color</string>
+    <string name="tap_the_color">Tap the color: Red</string>
 </resources>
