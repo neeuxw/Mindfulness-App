@@ -4,24 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:paddingBottom="24dp"
     android:background="@drawable/mountain_background"
     android:fillViewport="true">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:layout_marginTop="50dp">
 
-        <!-- Profile Header-->
+        <!-- Profile Header -->
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
+            android:id="@+id/card_profile_header"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             app:cardCornerRadius="12dp"
             app:cardElevation="0dp"
-            app:cardBackgroundColor="@android:color/transparent">
+            app:cardBackgroundColor="@android:color/transparent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -54,24 +57,33 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <!-- My Status Title -->
         <TextView
+            android:id="@+id/tv_my_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="@string/my_status"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@color/gray_blue"
             android:layout_marginBottom="16dp"
-            android:layout_gravity="start" />
+            app:layout_constraintTop_toBottomOf="@id/card_profile_header"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <!-- Mood Card -->
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
+            android:id="@+id/card_mood"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:layout_marginBottom="24dp"
             app:cardCornerRadius="12dp"
             app:cardElevation="0dp"
-            app:cardBackgroundColor="#80FFFFFF">
+            app:cardBackgroundColor="#80FFFFFF"
+            app:layout_constraintTop_toBottomOf="@id/tv_my_status"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -99,27 +111,35 @@
                     android:textStyle="bold" />
 
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
-        <!-- Check-in Section -->
+        <!-- Daily Check-in Title -->
         <TextView
+            android:id="@+id/tv_daily_checkin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="@string/daily_check_in"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="#2d3436"
             android:layout_marginBottom="16dp"
-            android:layout_gravity="start" />
+            app:layout_constraintTop_toBottomOf="@id/card_mood"
+            app:layout_constraintStart_toStartOf="parent" />
 
+        <!-- Check-in Card -->
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
+            android:id="@+id/card_checkin"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:layout_marginBottom="24dp"
             app:cardCornerRadius="12dp"
             app:cardElevation="0dp"
-            app:cardBackgroundColor="#80FFFFFF">
+            app:cardBackgroundColor="#80FFFFFF"
+            app:layout_constraintTop_toBottomOf="@id/tv_daily_checkin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -143,7 +163,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
                     android:text="@string/check_in"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
                     android:backgroundTint="@color/gray_blue"
@@ -153,25 +173,27 @@
                     app:cornerRadius="24dp"
                     app:rippleColor="#74b9ff" />
 
-
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <!-- Logout Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_logout"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="50dp"
+            android:layout_marginTop="16dp"
             android:text="@string/logout"
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="#e84118"
             android:backgroundTint="#f8f9fa"
-            android:layout_marginTop="8dp"
             app:cornerRadius="24dp"
             app:strokeColor="#e84118"
             app:strokeWidth="1dp"
-            app:rippleColor="#ff7675" />
+            app:rippleColor="#ff7675"
+            app:layout_constraintTop_toBottomOf="@id/card_checkin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

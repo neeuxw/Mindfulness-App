@@ -11,7 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import com.example.myapplication.UserViewModel;
 
@@ -43,10 +42,10 @@ public class ProfileFragment extends Fragment {
 
     private final int[] moodIcons = {
             R.drawable.ic_mood1,     // Mood level 1
-            R.drawable.ic_mood2,          // Mood level 2
-            R.drawable.ic_mood3,      // Mood level 3
-            R.drawable.ic_mood4,        // Mood level 4
-            R.drawable.ic_mood5    // Mood level 5
+            R.drawable.ic_mood2,     // Mood level 2
+            R.drawable.ic_mood3,     // Mood level 3
+            R.drawable.ic_mood4,     // Mood level 4
+            R.drawable.ic_mood5      // Mood level 5
     };
 
     // Static method to create fragment with username

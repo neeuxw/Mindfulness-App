@@ -12,5 +12,13 @@
     <color name="icy_mist">#B3C7CD</color>
     <color name="mint_green">#CFEAE7</color>
     <color name="inkwell_blue">#3A445D</color>
-
+    <color name="soft_apricot">#F2B199</color>
+    <color name="warm_sand">#F2E6C9</color>
+    <color name="light_green">#A3BFA8</color>
+    <color name="sun_yellow">#F9C74F</color>
+    <color name="leaf_green">#90BE6D</color>
+    <color name="steel_blue">#577590</color>
+    <color name="coral_red">#F94144</color>
+    <color name="light_gray">#F2F2F2</color>
+    <color name="pure_white">#FFFFFF</color>
 </resources>

@@ -13,7 +13,11 @@
 
         <action
             android:id="@+id/action_to_cloudGameFragment"
-            app:destination="@id/cloudGameFragment" />
+            app:destination="@id/cloudGameFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
 
     <fragment
@@ -24,7 +28,19 @@
 
         <action
             android:id="@+id/action_to_practiceDetail"
-            app:destination="@id/practiceDetailFragment" />
+            app:destination="@id/practiceDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+
+        <action
+            android:id="@+id/action_to_breathingFragment"
+            app:destination="@id/breathingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         </fragment>
 
     <fragment
@@ -35,7 +51,11 @@
 
         <action
             android:id="@+id/action_to_article"
-            app:destination="@id/articleFragment" />
+            app:destination="@id/articleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
 
     <fragment
@@ -81,26 +101,61 @@
     </fragment>
 
     <fragment
+        android:id="@+id/breathingFragment"
+        android:name="com.example.myapplication.BreathingFragment"
+        android:label="@string/title_practice"
+        tools:layout="@layout/fragment_practice_detail">
+        <argument
+            android:name="practiceTitle"
+            app:argType="string" />
+        <argument
+            android:name="practiceDescription"
+            app:argType="string" />
+        <argument
+            android:name="backgroundResId"
+            app:argType="integer" />
+        <argument
+            android:name="practiceGuide"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
         android:id="@+id/navigation_game"
         android:name="com.example.myapplication.GameFragment"
-        android:label="@string/title_game"
+        android:label="Mindfulness Gamification"
         tools:layout="@layout/fragment_game" >
 
         <action
             android:id="@+id/action_gameFragment_to_cloudGameFragment"
-            app:destination="@id/cloudGameFragment" />
+            app:destination="@id/cloudGameFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
 
         <action
             android:id="@+id/action_gameFragment_to_focusTapFragment"
-            app:destination="@id/focusTapFragment" />
+            app:destination="@id/focusTapFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
 
         <action
             android:id="@+id/action_gameFragment_to_colorMindfulnessFragment"
-            app:destination="@id/colorMindfulnessFragment" />
+            app:destination="@id/colorMindfulnessFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
 
         <action
             android:id="@+id/action_gameFragment_to_zenDoodleFragment"
-            app:destination="@id/zenDoodleFragment" />
+            app:destination="@id/zenDoodleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
 
     </fragment>
 

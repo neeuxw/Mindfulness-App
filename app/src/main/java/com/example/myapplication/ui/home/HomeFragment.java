@@ -117,30 +117,6 @@ public class HomeFragment extends Fragment {
         }
     }
 
-
-    /*
-    private void loadUsername() {
-        new Thread(() -> {
-            String username = getUsernameFromDatabase();
-
-            if (getActivity() != null) {
-                getActivity().runOnUiThread(() -> {
-                    if (username != null && !username.isEmpty()) {
-                        usernameText.setText(username);
-                        currentUsername = username; // Store username for mood saving
-                        userViewModel.setUsername(username);  // ViewModel update
-                        loadTodaysMood(); // Load today's mood if exists
-                    } else {
-                        usernameText.setText("User");
-                        currentUsername = "User"; // Default username
-                        userViewModel.setUsername("User"); // ViewModel update
-                    }
-                });
-            }
-        }).start();
-    }
-     */
-
     // Load today's mood from database
     private void loadTodaysMood() {
         new Thread(() -> {
@@ -155,27 +131,6 @@ public class HomeFragment extends Fragment {
             }
         }).start();
     }
-
-    /*
-    private String getUsernameFromDatabase() {
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-        String username = null;
-
-        Cursor cursor = db.query(
-                "users",
-                new String[]{"username"},
-                null, null, null, null, null
-        );
-
-        if (cursor != null && cursor.moveToFirst()) {
-            username = cursor.getString(0);
-            cursor.close();
-        }
-        db.close();
-
-        return username;
-    }
-     */
 
     private void showRandomQuote() {
         Random random = new Random();

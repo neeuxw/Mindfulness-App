@@ -16,28 +16,31 @@ import java.util.Objects;
 
 public class ArticleFragment extends Fragment {
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_article, container, false);
-
-        ImageView articleImage = view.findViewById(R.id.article_image);
-        TextView articleTitle = view.findViewById(R.id.article_title);
-        TextView articleContent = view.findViewById(R.id.article_content);
-
-        if (getArguments() != null) {
-            String title = getArguments().getString("articleTitle");
-            int imageRes = getArguments().getInt("articleImageRes");
-            String content = getArguments().getString("articleContent");
-
-            articleImage.setImageResource(imageRes);
-            articleTitle.setText(title);
-            articleContent.setText(content);
-        }
-
-        return view;
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_article, container, false);
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        Bundle args = getArguments();
+        if (args != null) {
+            String title = args.getString("articleTitle");
+            int imageRes = args.getInt("articleImageRes");
+            String content = args.getString("articleContent");
+
+            TextView titleView = view.findViewById(R.id.article_title);
+            ImageView imageView = view.findViewById(R.id.article_image);
+            TextView contentView = view.findViewById(R.id.article_content);
+
+            titleView.setText(title);
+            imageView.setImageResource(imageRes);
+            contentView.setText(content);
+        }
+    }
+
 
     @Override
     public void onResume() {
