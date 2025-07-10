@@ -1,6 +1,3 @@
-README.txt
-----------
-
 1. PREPARATION
    • Install Android Studio (latest version recommended): https://developer.android.com/studio
    • Ensure Git is installed and configured:
